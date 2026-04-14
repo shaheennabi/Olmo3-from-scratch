@@ -4,6 +4,32 @@ A complete PyTorch implementation of AllenAI's Olmo-3 language model series, sup
 
 ## Architecture Overview
 
+x (input)                         # [B, T, D]
+│
+├── RMSNorm --------------------→ x_norm1
+│                                # [B, T, D]
+│
+├── Multi-Head Attention
+│     ├── Q, K, V projections
+│     ├── RoPE applied to Q, K
+│     ├── KV cache (append/read)
+│     ├── causal attention
+│     └── output projection
+│
+├── Residual Add --------------→ x = x + attn_out
+│
+├── RMSNorm --------------------→ x_norm2
+│
+├── MLP (SwiGLU/GEGLU)
+│     ├── up projection
+│     ├── gated activation
+│     └── down projection
+│
+└── Residual Add --------------→ x = x + mlp_out
+
+OUTPUT: x                        # [B, T, D]
+
+
 This implementation features a modern transformer architecture with the following key components:
 
 ### Core Components
