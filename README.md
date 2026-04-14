@@ -4,6 +4,9 @@ A complete PyTorch implementation of AllenAI's Olmo-3 language model series, sup
 
 ## Architecture Overview
 
+## Architecture Flow
+
+```text
 x (input)                         # [B, T, D]
 │
 ├── RMSNorm --------------------→ x_norm1
@@ -13,7 +16,7 @@ x (input)                         # [B, T, D]
 │     ├── Q, K, V projections
 │     ├── RoPE applied to Q, K
 │     ├── KV cache (append/read)
-│     ├── causal attention
+│     ├── causal masking
 │     └── output projection
 │
 ├── Residual Add --------------→ x = x + attn_out
@@ -28,6 +31,10 @@ x (input)                         # [B, T, D]
 └── Residual Add --------------→ x = x + mlp_out
 
 OUTPUT: x                        # [B, T, D]
+```
+
+
+
 
 
 This implementation features a modern transformer architecture with the following key components:
