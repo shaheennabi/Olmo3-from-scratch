@@ -4,6 +4,7 @@ A complete PyTorch implementation of AllenAI's Olmo-3 language model series, sup
 
 ## Architecture Overview
 <img width="777" height="938" alt="Screenshot 2026-04-14 232656" src="https://github.com/user-attachments/assets/e0f42d77-84cd-4bee-8535-26682286d4ec" />
+--image from Sebastian Raschka
 
 ## Architecture Flow
 
