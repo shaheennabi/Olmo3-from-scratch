@@ -108,7 +108,6 @@ class KvCache:
 ├── model/
 │   ├── attention.py           # Multi-head attention with GQA
 │   ├── block.py               # Transformer block
-│   ├── embeddings.py          # Token embeddings + RoPE
 │   ├── mlp.py                 # SwiGLU feed-forward network
 │   ├── norm.py                # RMSNorm implementation
 │   ├── rope.py                # YaRN RoPE implementation
@@ -117,8 +116,7 @@ class KvCache:
 │   └── olmo3.ipynb            # Complete implementation notebook
 ├── utils/
 │   ├── device.py              # Device management utilities
-│   ├── logging.py             # Logging configuration
-│   └── seed.py                # Random seed management
+│   └── load_tokenizer.py      # loading tokenizer 
 ├── weights/
 │   └── load_weights.py        # Weight loading from HuggingFace
 ├── run_inference.py           # Inference script entry point
